@@ -50,15 +50,15 @@ Reviewing the codebase demonstrates key implementation patterns:
 *(Include screenshots here to visually showcase the project)*
 
 * **Homepage:** Show the main page with the hero section and product listings.
-    ![Screenshot of Homepage](img/homepage.png)
+    ![Screenshot of Homepage](images/homepage.png)
 * **Product Section:** Highlight the product display and category filtering.
-    ![Screenshot of Product Section](img/product_section.png)
+    ![Screenshot of Product Section](images/product_section.png)
 * **Modal Example:** Show one of the modal windows.
-    ![Screenshot of a Modal](img/modal_example.png)
+    ![Screenshot of a Modal](images/modal_example.png)
 * **Delivery Page:** Display the Delivery Information page.
-    ![Screenshot of Delivery Page](img/delivery_page.png)
+    ![Screenshot of Delivery Page](images/delivery_page.png)
 * **Promotions Page:** Show how the special offers are presented.
-    ![Screenshot of Promotions Page](img/promotions_page.png)
+    ![Screenshot of Promotions Page](images/promotions_page.png)
 
 ### Future Development
 
