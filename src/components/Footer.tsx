@@ -1,0 +1,125 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../App.css';
+
+interface FooterProps {
+  onOpenContactsModal: () => void;
+  onOpenPrivacyPolicyModal: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onOpenContactsModal, onOpenPrivacyPolicyModal }) => {
+  const FooterLogoSvg = (
+    <svg className="w-[124px] h-[36px]" viewBox="0 0 100 28" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+      <path fill="url(#footer-a)" d="M0 14C0 6.268 6.268 0 14 0s14 6.268 14 14-6.268 14-14 14S0 21.732 0 14Z" />
+      <path
+        fill="#242923"
+        fillRule="evenodd"
+        d="M1.75 14c0 6.765 5.485 12.25 12.25 12.25S26.25 20.765 26.25 14 20.765 1.75 14 1.75 1.75 7.235 1.75 14ZM14 0C6.268 0 0 6.268 0 14s6.268 14 14 14 14-6.268 14-14S21.732 0 14 0Z"
+        clipRule="evenodd"
+      />
+      <rect width="14" height="14" x="7" y="7" fill="url(#footer-b)" rx="7" />
+      <path
+        fill="#F58E7D"
+        d="M9.625 19.465a7.04 7.04 0 0 1-.875-.835v-1.098c-.455-3.123.442-6.407 2.838-7.845 1.033-.62 1.997-.706 2.882-.786.14-.012.278-.025.414-.04.834-.087 1.676-.243 2.654-.902.27.158.527.333.772.525-1.253.934-2.334 1.248-.154.016-.302.03-.448.043-.882.082-1.64.152-2.49.663-1.971 1.182-2.858 4.037-2.418 6.998l.005.032v1.997Z"
+      />
+      <path
+        fill="#F58E7D"
+        d="M12.25 20.78a6.95 6.95 0 0 1-.875-.289v-.334c-.455-3.122.442-6.407 2.838-7.845 1.033-.62 1.997-.706 2.882-.786.14-.012.278-.025.414-.04.823-.086 1.654-.239 2.616-.877.143.256.27.523.379.797-1.073.684-2.02.858-2.903.951-.153.016-.302.03-.448.043-.882.082-1.64.152-2.49.663-1.971 1.182-2.858 4.036-2.418 6.998l.005.032v.686Z"
+      />
+      <path
+        fill="#F58E7D"
+        d="M14.763 20.959a7.064 7.064 0 0 1-.875.04c.052-2.52 1.009-4.897 2.95-6.062 1.033-.62 1.997-.706 2.882-.786.14-.012.278-.025.414-.04.286-.03.573-.067.866-.131V14c0 .299-.019.594-.055.883a9.867 9.867 0 0 1-.72.099c-.152.016-.301.03-.447.043-.882.082-1.64.152-2.49.663-1.583.95-2.466 2.976-2.525 5.27Z"
+      />
+      <g fill="#000" clipPath="url(#footer-c)">
+        <path d="M39.432 2.432c1.12 0 1.936.22 2.448.66.512.44.768 1.06.768 1.86 0 .352-.06.692-.18 1.02-.112.32-.3.608-.564.864-.264.256-.616.46-1.056.612-.44.144-.98.216-1.62.216h-.984V11h-1.08V2.432h2.268Zm-.096.924h-1.092V6.74h.864c.544 0 .996-.056 1.356-.168.36-.12.628-.308.804-.564.176-.256.264-.592.264-1.008 0-.552-.176-.964-.528-1.236-.352-.272-.908-.408-1.668-.408Zm5.106-.924h1.008v4.704c0 .2-.004.42-.012.66 0 .232-.004.464-.012.696-.008.232-.02.44-.036.624-.008.176-.016.312-.024.408h.048l4.716-7.092h1.2V11h-1.008V6.344c0-.216.004-.448.012-.696l.024-.732c.016-.24.028-.452.036-.636.008-.184.016-.32.024-.408h-.048L45.642 11h-1.2V2.432Zm12.87.828c-.455 0-.867.08-1.235.24-.368.152-.68.38-.936.684-.256.296-.452.66-.588 1.092a4.707 4.707 0 0 0-.204 1.44c0 .704.108 1.316.324 1.836.224.52.552.92.984 1.2.44.28.988.42 1.644.42.376 0 .732-.032 1.068-.096a9.81 9.81 0 0 0 .984-.24v.936c-.32.12-.652.208-.996.264a7.5 7.5 0 0 1-1.212.084c-.872 0-1.6-.18-2.184-.54-.584-.36-1.024-.872-1.32-1.536-.288-.664-.432-1.444-.432-2.34 0-.648.088-1.24.264-1.776.184-.536.448-1 .792-1.392a3.469 3.469 0 0 1 1.296-.9c.512-.216 1.1-.324 1.764-.324.44 0 .864.044 1.272.132.408.088.772.212 1.092.372l-.432.912a6.693 6.693 0 0 0-.888-.324 3.664 3.664 0 0 0-1.056-.144ZM66.6 11l-1.032-2.652H62.17L61.15 11h-1.092l3.348-8.604h.972L67.715 11h-1.116Zm-2.316-6.204a39.63 39.63 0 0 1-.288-.864 7.067 7.067 0 0 0-.12-.42c-.04.16-.084.324-.132.492-.04.16-.084.308-.132.444-.04.136-.076.252-.108.348l-.972 2.592h2.712l-.96-2.592ZM37.392 26V14.8h2.144l4.768 7.904h-1.136l4.688-7.904H50l.016 11.2h-2.432l-.016-7.472h.464l-3.76 6.288H43.12l-3.84-6.288h.544V26h-2.432Zm23.086-11.2h2.592V26h-2.592V14.8ZM55.39 26h-2.592V14.8h2.592V26Zm5.28-4.592h-5.472v-2.192h5.472v2.192Zm10.566 4.784a6.875 6.875 0 0 1-2.464-.432 5.917 5.917 0 0 1-1.952-1.216 5.71 5.71 0 0 1-1.28-1.84 5.838 5.838 0 0 1-.448-2.304c0-.832.15-1.6.448-2.304a5.592 5.592 0 0 1 1.296-1.84 5.917 5.917 0 0 1 1.952-1.216 6.7 6.7 0 0 1 2.432-.432c.886 0 1.696.144 2.432.432a5.74 5.74 0 0 1 1.936 1.216 5.595 5.595 0 0 1 1.296 1.84c.31.693.464 1.461.464 2.304 0 .832-.154 1.605-.464 2.32a5.595 5.595 0 0 1-1.296 1.84 5.874 5.874 0 0 1-1.936 1.2 6.575 6.575 0 0 1-2.416.432Zm-.016-2.208c.502 0 .96-.085 1.376-.256a3.265 3.265 0 0 0 1.856-1.872c.182-.437.272-.923.272-1.456 0-.533-.09-1.019-.272-1.456a3.265 3.265 0 0 0-.736-1.136 3.136 3.136 0 0 0-1.104-.736 3.714 3.714 0 0 0-1.392-.256 3.71 3.71 0 0 0-1.392.256 3.34 3.34 0 0 0-1.104.736c-.32.32-.57.699-.752 1.136-.17.437-.256.923-.256 1.456 0 .523.086 1.008.256 1.456.182.437.427.816.736 1.136a3.3 3.3 0 0 0 1.12.736c.427.17.891.256 1.392.256ZM79.345 26V14.8h7.904l-.016 2.112h-5.92l.592-.592l.016 9.68h-2.576Zm13.704.192a6.875 6.875 0 0 1-2.464-.432 5.917 5.917 0 0 1-1.952-1.216 5.71 5.71 0 0 1-1.28-1.84 5.838 5.838 0 0 1-.448-2.304c0-.832.15-1.6.448-2.304a5.592 5.592 0 0 1 1.296-1.84A5.917 5.917 0 0 1 90.6 15.04a6.7 6.7 0 0 1 2.432-.432c.885 0 1.696.144 2.432.432a5.74 5.74 0 0 1 1.936 1.216 5.595 5.595 0 0 1 1.296 1.84c.31.693.464 1.461.464 2.304 0 .832-.155 1.605-.464 2.32a5.595 5.595 0 0 1-1.296 1.84 5.874 5.874 0 0 1-1.936 1.2 6.575 6.575 0 0 1-2.416.432Zm-.016-2.208c.501 0 .96-.085 1.376-.256a3.265 3.265 0 0 0 1.856-1.872c.181-.437.272-.923.272-1.456 0-.533-.09-1.019-.272-1.456a3.265 3.265 0 0 0-.736-1.136 3.136 3.136 0 0 0-1.104-.736 3.714 3.714 0 0 0-1.392-.256c-.502 0-.966.085-1.392.256a3.34 3.34 0 0 0-1.104.736c-.32.32-.57.699-.752 1.136-.17.437-.256.923-.256 1.456 0 .523.085 1.008.256 1.456.181.437.427.816.736 1.136a3.3 3.3 0 0 0 1.12.736c.426.17.89.256 1.392.256Z"
+      />
+      </g>
+      <defs>
+        <linearGradient id="footer-a" x1="0" x2="28" y1="0" y2="28" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FBFBFB" />
+          <stop offset="1" stopColor="#E9E5E0" />
+        </linearGradient>
+        <linearGradient id="footer-b" x1="7" x2="21" y1="7" y2="21" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FF7F6A" />
+          <stop offset="1" stopColor="#BF5948" />
+        </linearGradient>
+        <clipPath id="footer-c">
+          <path fill="#fff" d="M36 2h64v24H36z" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+
+  return (
+    <footer className="w-full bg-[#EAEAEA] py-16 pb-12">
+      <div className="container mx-auto px-2 md:px-4 flex flex-col gap-y-6">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="block flex-shrink-0" aria-label="На главную страницу">
+            {FooterLogoSvg}
+          </Link>
+          <nav className="footer__nav ml-16 hidden md:flex" aria-label="Навигация в футере">
+            <ul className="flex items-center gap-x-6 text-base font-medium text-black leading-none">
+              <li>
+                <Link to="/" className="hover:text-[#F64831] transition-colors duration-200">
+                  Главная
+                </Link>
+              </li>
+              <li>
+                <a href="/#menu" className="hover:text-[#F64831] transition-colors duration-200">
+                  Меню
+                </a>
+              </li>
+              <li><Link to="/delivery" className="hover:text-[#F64831] transition-colors duration-200">Доставка</Link></li>
+              <li><Link to="/promotions" className="hover:text-[#F64831] transition-colors duration-200">
+                  Акции
+                  </Link>
+              </li>
+              <li>
+                <button
+                  onClick={onOpenContactsModal}
+                  className="text-base font-medium text-black leading-none hover:text-[#F64831] transition-colors duration-200"
+                >
+                  Контакты
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <p className="ml-auto text-base font-medium text-black leading-none">
+            © 2025 Все права защищены <span className="font-semibold">РИСА МНОГО</span>
+          </p>
+        </div>
+        <div className="flex items-center justify-between text-sm font-medium text-[#1f1f1f]">
+          <div className="flex items-center gap-x-4">
+            <button
+              onClick={onOpenPrivacyPolicyModal}
+              className="text-sm font-medium text-[#1f1f1f] leading-none hover:text-[#F64831] transition-colors duration-200"
+            >
+              Политика конфиденциальности
+            </button>
+            <span className="w-1 h-1 bg-[#BBBBBB] rounded-full flex-shrink-0"></span>
+            <a href="tel:+79955708331" className="hover:text-[#F64831] transition-colors duration-200">
+              +7(995)-570-83-31
+            </a>
+            <span className="w-1 h-1 bg-[#BBBBBB] rounded-full flex-shrink-0"></span>
+            <a href="mailto:risa.mnogo@gmail.com" className="hover:text-[#F64831] transition-colors duration-200">
+              risa.mnogo@gmail.com
+            </a>
+          </div>
+          <p className="text-right">
+            designed and developed by Danil Klimov{' '}
+            <a
+              href="https://t.me/sarthriles"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#F64831] hover:underline transition-colors duration-200"
+            >
+              (тык)
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
