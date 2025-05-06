@@ -4,7 +4,7 @@
 
 ### Overview
 
-This repository contains the code for a minimal yet fully functional e-commerce website, developed as a core project for my portfolio. It simulates an online store for **"Риса Много,"** a food delivery service specializing in **sushi, rolls, and WOK in Smolensk**.
+This repository contains the code for a minimal yet fully functional e-commerce website, developed as a core project for my portfolio. It simulates an online store for **"Риса Много,"** a food delivery service specializing in **sushi, rolls, and WOK**.
 
 The project serves as a practical demonstration of my skills in building modern web applications across the full stack. It focuses on implementing essential e-commerce functionalities – such as displaying products, handling user interactions (like adding to cart), managing navigation, and integrating with a backend API – while applying principles of good UI/UX design and clean code architecture. It embodies my approach to turning concepts into working products, balancing internal logic and functionality with external appeal.
 
@@ -46,8 +46,6 @@ Reviewing the codebase demonstrates key implementation patterns:
 * The `HeroSection.tsx` component demonstrates the use of an external library (Swiper) for creating interactive UI elements.
 
 ### Screenshots
-
-*(Include screenshots here to visually showcase the project)*
 
 * **Homepage:** Show the main page with the hero section and product listings.
     ![Screenshot of Homepage](images/homepage.png)
